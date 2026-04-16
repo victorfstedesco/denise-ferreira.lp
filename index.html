@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denise Santos Ferreira | Psicoterapia e Psicanálise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            white: '#FFFFFF',
+                            bg: '#FDFBF7',       /* Off-white bem mais suave */
+                            primary: '#698474',     /* Verde Sálvia (Mais leve e acolhedor) */
+                            primaryHover: '#536D5E', /* Verde Sálvia escuro para hover */
+                            secondary: '#C4A484',    /* Bege Quente/Nude (Traz conforto) */
+                            secondaryLight: '#EFEAE3', /* Nude bem clarinho para fundos */
+                            text: '#595959',      /* Cinza médio/escuro mais leve que preto */
+                            textLight: '#8A8A8A'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: theme('colors.brand.white'); color: theme('colors.brand.text'); }
+        .fade-in-up { animation: fadeInUp 1s ease-out forwards; opacity: 0; transform: translateY(20px); }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-primary selection:text-white">
+
+    <header class="fixed w-full bg-white/95 backdrop-blur-md z-50 border-b border-brand-secondaryLight/50 transition-all shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="#" class="text-2xl font-serif font-semibold text-brand-primary tracking-wide">
+                Denise S. Ferreira
+            </a>
+            <nav class="hidden md:flex space-x-10 text-[13px] uppercase tracking-[0.15em] font-medium text-gray-500">
+                <a href="#inicio" class="hover:text-brand-secondary transition duration-300">Início</a>
+                <a href="#sobre-mim" class="hover:text-brand-secondary transition duration-300">Sobre Mim</a>
+                <a href="#demandas" class="hover:text-brand-secondary transition duration-300">Áreas</a>
+                <a href="#duvidas" class="hover:text-brand-secondary transition duration-300">Dúvidas</a>
+                <a href="#depoimentos" class="hover:text-brand-secondary transition duration-300">Depoimentos</a>
+            </nav>
+            <a href="https://wa.me/SEUNUMERO" target="_blank" class="hidden md:inline-flex items-center justify-center bg-brand-primary text-white px-7 py-2.5 rounded-full text-sm font-medium tracking-wide hover:bg-brand-primaryHover transition duration-300 shadow-md">
+                Vamos agendar?
+            </a>
+        </div>
+    </header>
+
+    <section id="inicio" class="relative pt-40 pb-20 md:pt-52 md:pb-32 overflow-hidden bg-brand-bg">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-6 space-y-8 z-10 fade-in-up">
+                <div class="inline-block px-4 py-1.5 rounded-full border border-brand-secondary/30 bg-white text-xs font-semibold tracking-widest uppercase text-brand-secondary mb-2 shadow-sm">
+                    Psicoterapia: Presencial e Online
+                </div>
+                <div class="inline-block ml-2 px-4 py-1.5 rounded-full bg-brand-secondaryLight text-xs font-semibold tracking-widest uppercase text-brand-primary mb-2 shadow-sm">
+                    Público: Criança, adolescente e adulto
+                </div>
+                
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.1] text-brand-primary">
+                    Um espaço de <span class="italic text-brand-secondary">escuta segura</span>.
+                </h1>
+                <p class="text-lg font-light leading-relaxed text-gray-600 max-w-lg">
+                    Ofereço um espaço de escuta segura, acolhimento e experiência clínica para tratamento das dores emocionais, processos de mudanças, adaptações, crescimento e transformação.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="https://wa.me/SEUNUMERO" class="bg-brand-primary text-white text-center px-8 py-4 rounded-full font-medium hover:bg-brand-primaryHover transition duration-300 shadow-xl shadow-brand-primary/20 flex items-center justify-center gap-2">
+                        Vamos agendar?
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6 relative h-[500px] md:h-[600px] hidden md:block">
+                <div class="absolute top-0 right-0 w-3/4 h-[85%] rounded-[2rem] shadow-2xl z-10 fade-in-up delay-100 border-4 border-white overflow-hidden">
+                    <img src="foto2.jpeg" 
+                         alt="Sessão de Psicoterapia/Acolhimento" 
+                         class="w-full h-full object-cover object-top scale-105">
+                </div>
+                     
+                <div class="absolute top-20 left-10 w-64 h-64 bg-brand-secondaryLight rounded-full mix-blend-multiply opacity-70 blur-3xl z-0"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre-mim" class="py-24 bg-white border-y border-brand-secondaryLight">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative order-2 md:order-1">
+                <img src="foto1.jpeg" 
+                     alt="Psicóloga Denise" 
+                     class="rounded-[2rem] w-full aspect-[4/5] object-cover shadow-xl border-4 border-white">
+                
+                <div class="absolute -bottom-8 -right-8 bg-brand-secondary text-white p-6 rounded-[2rem] hidden md:block max-w-xs shadow-xl border-4 border-white">
+                    <p class="font-serif text-xl italic mb-2">"Quem cuida também precisa ser cuidado!"</p>
+                </div>
+            </div>
+            
+            <div class="space-y-8 md:pl-8 order-1 md:order-2">
+                <p class="uppercase tracking-[0.2em] text-xs text-brand-secondary font-bold">Muito Prazer</p>
+                <h2 class="text-4xl md:text-5xl font-serif text-brand-primary leading-tight">Um pouco mais<br>sobre mim.</h2>
+                <div class="text-brand-text font-light leading-relaxed space-y-4">
+                    <p><strong>10 anos atendendo na psicologia clínica.</strong> Na abordagem psicanalítica trabalhando questões conscientes e inconscientes do psiquismo humano. Foco na resolução de conflitos internos e de relacionamentos.</p>
+                    <p>A capacitação de um profissional que atende pela abordagem psicanalítica, é vivência de estudo continuado em Grupo de estudos, supervisão clínica e o mais importante a Análise pessoal.</p>
+                    <p>O profissional passa pelo processo de também ser atendido trabalhando suas questões, para viver com qualidade de vida e estar apto a tratar outras pessoas, com empatia e conhecimento da experiência que é a psicoterapia.</p>
+                </div>
+                
+                <div class="pt-6 flex gap-6">
+                    <a href="https://www.instagram.com/psicologadeniseferreira/" target="_blank" class="inline-flex items-center gap-3 text-brand-primary font-medium hover:text-brand-secondary transition border-b border-brand-primary hover:border-brand-secondary pb-1">
+                        <i class="fa-brands fa-instagram text-xl"></i> Meu Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="demandas" class="py-24 bg-brand-bg">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <p class="uppercase tracking-[0.2em] text-xs text-brand-secondary font-bold mb-2">Especialidades</p>
+                <h2 class="text-4xl md:text-5xl font-serif text-brand-primary mb-6">Algumas demandas de atendimento</h2>
+                <p class="text-brand-text font-light text-lg">Quadros de excesso de Ansiedade e Agressividade.</p>
+            </div>
+
+            <div class="flex flex-wrap gap-3 justify-center">
+                <!-- Demandas List (from image) -->
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Ansiedade em excesso</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Autoestima baixa</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Burnout</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Depressão</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Estresse</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Estresse Pós-Traumático</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Medos e Fobias</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Síndrome do Pânico</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">TOC</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Transtorno Bipolar</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Traumas</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Dores Psicossomáticas</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Doenças Crônicas</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Abusos (Físicos/Emocionais)</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Demandas da Sexualidade</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Vício em Internet/Jogos</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Assédio Moral e Sexual</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Conflitos Profissionais</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Conflitos na Adolescência</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Dificuldades Desenvolvimento/Aprendizagem</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Mudanças Terceira Idade</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Lutos e Perdas</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Conflitos Familiares</span>
+                <span class="px-5 py-2.5 bg-white border border-brand-secondaryLight rounded-full text-brand-text text-sm hover:border-brand-primary transition">Acompanhamento rumo a transformações</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="duvidas" class="py-24 bg-white border-t border-brand-secondaryLight">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="uppercase tracking-[0.2em] text-xs text-brand-secondary font-bold mb-2">FAQ</p>
+                <h2 class="text-4xl md:text-5xl font-serif text-brand-primary">Dúvidas Frequentes</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- Pergunta 1 -->
+                <details class="group bg-brand-bg rounded-2xl border border-brand-secondaryLight overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-5 font-medium text-brand-primary flex justify-between items-center outline-none list-none">
+                        Como funciona a terapia online?
+                        <span class="transition group-open:rotate-180 text-brand-secondary">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-5 text-brand-text font-light text-sm">
+                        As sessões online ocorrem por vídeo chamada de forma sigilosa e segura. A eficácia é a mesma do formato presencial, permitindo que você seja atendido no conforto de onde estiver.
+                    </div>
+                </details>
+                
+                <!-- Pergunta 2 -->
+                <details class="group bg-brand-bg rounded-2xl border border-brand-secondaryLight overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-5 font-medium text-brand-primary flex justify-between items-center outline-none list-none">
+                        Qual a duração de cada sessão?
+                        <span class="transition group-open:rotate-180 text-brand-secondary">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-5 text-brand-text font-light text-sm">
+                        Cada sessão dura em média 50 minutos. A frequência é geralmente semanal, mas pode ser ajustada conforme a necessidade de cada caso discutido entre nós.
+                    </div>
+                </details>
+
+                <!-- Pergunta 3 -->
+                <details class="group bg-brand-bg rounded-2xl border border-brand-secondaryLight overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-5 font-medium text-brand-primary flex justify-between items-center outline-none list-none">
+                        Psicanálise é recomendada para crianças e adolescentes?
+                        <span class="transition group-open:rotate-180 text-brand-secondary">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-5 text-brand-text font-light text-sm">
+                        Sim! Atendo ao público de crianças e adolescentes. A psicanálise infantil utiliza recursos lúdicos para permitir que os pequenos expressem de forma segura seus incômodos, mudanças e desafios.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="py-24 bg-brand-bg relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <i class="fa-solid fa-quote-left text-4xl text-brand-secondaryLight mb-4"></i>
+                <h2 class="text-4xl md:text-5xl font-serif text-brand-primary">Depoimentos</h2>
+                <p class="text-brand-text font-light mt-4">Pessoas que transformaram suas jornadas através de um espaço seguro de escuta.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-brand-secondaryLight relative flex flex-col justify-between">
+                    <div>
+                        <div class="text-brand-secondary text-sm mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="text-brand-text font-light text-sm leading-relaxed mb-6">"Profissional incrível, atenciosa, realmente preparada para atender, sempre simpática, estou muito feliz em ter encontrado uma psicóloga tão boa e competente, só tenho agradecer por toda dedicação e cuidado que tem tido comigo."</p>
+                    </div>
+                    <div class="flex justify-between items-end mt-4">
+                        <p class="font-serif text-brand-primary font-semibold">- AB</p>
+                        <span class="text-xs text-brand-textLight">Junho 2022</span>
+                    </div>
+                </div>
+                <!-- Depoimento 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-brand-secondaryLight relative flex flex-col justify-between">
+                    <div>
+                        <div class="text-brand-secondary text-sm mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="text-brand-text font-light text-sm leading-relaxed mb-6">"Uma ótima profissional e estou tendo evolução no tratamento. A Denise deixa a gente bem tranquila para conversar e ela passa uma serenidade/paz. As orientações são ótimas para seguir."</p>
+                    </div>
+                    <div class="flex justify-between items-end mt-4">
+                        <p class="font-serif text-brand-primary font-semibold">- SMRC</p>
+                        <span class="text-xs text-brand-textLight">Novembro 2023</span>
+                    </div>
+                </div>
+                <!-- Depoimento 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-brand-secondaryLight relative flex flex-col justify-between">
+                    <div>
+                        <div class="text-brand-secondary text-sm mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="text-brand-text font-light text-sm leading-relaxed mb-6">"Denise tem um cuidado muito grande com as palavras utilizadas, sempre oferecendo escuta ativa, atenta aos detalhes. Tem o equilíbrio entre oferecer segurança e acolhimento. Uma excelente profissional."</p>
+                    </div>
+                    <div class="flex justify-between items-end mt-4">
+                        <p class="font-serif text-brand-primary font-semibold">- ALSS</p>
+                        <span class="text-xs text-brand-textLight">Outubro 2025</span>
+                    </div>
+                </div>
+                <!-- Depoimento 4 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-brand-secondaryLight relative flex flex-col justify-between">
+                    <div>
+                        <div class="text-brand-secondary text-sm mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="text-brand-text font-light text-sm leading-relaxed mb-6">"Profissional excelente. Recomendo seus serviços. Ouvinte e pontual."</p>
+                    </div>
+                    <div class="flex justify-between items-end mt-4">
+                        <p class="font-serif text-brand-primary font-semibold">- MMS</p>
+                        <span class="text-xs text-brand-textLight">Março 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-brand-primary rounded-[3rem] p-12 text-center shadow-xl relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-brand-primaryHover rounded-full opacity-50"></div>
+                <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-[#7d998d] rounded-full opacity-50"></div>
+                
+                <div class="relative z-10 text-white">
+                    <h2 class="text-4xl font-serif mb-6">Vamos agendar?</h2>
+                    <p class="text-brand-secondaryLight mb-10 font-light max-w-lg mx-auto text-lg">Cuidar da sua saúde mental é um investimento em qualidade de vida. Inicie seu processo com empatia profunda.</p>
+                    <a href="https://wa.me/SEUNUMERO" class="inline-flex items-center gap-3 bg-white text-brand-primary px-10 py-4 rounded-full font-bold hover:scale-105 transition duration-300 shadow-xl">
+                        <i class="fa-brands fa-whatsapp text-2xl text-green-600"></i>
+                        Agendar Sessão
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-bg pt-16 pb-10 border-t border-brand-secondaryLight">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 mb-16 text-brand-primary">
+            <div class="md:col-span-2">
+                <a href="#" class="text-2xl font-serif font-semibold mb-4 block">Denise S. Ferreira</a>
+                <p class="text-sm font-light text-brand-text max-w-sm leading-relaxed mb-6">Ofereço um espaço de escuta segura, acolhimento e experiência clínica para crianças, adolescentes e adultos.</p>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-lg mb-6 text-brand-secondary">Navegação</h4>
+                <ul class="space-y-3 text-sm font-light text-brand-text">
+                    <li><a href="#inicio" class="hover:text-brand-primary transition">Início</a></li>
+                    <li><a href="#sobre-mim" class="hover:text-brand-primary transition">Um pouco mais sobre mim</a></li>
+                    <li><a href="#demandas" class="hover:text-brand-primary transition">Demandas</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-lg mb-6 text-brand-secondary">Contato</h4>
+                <ul class="space-y-3 text-sm font-light text-brand-text">
+                    <li class="flex items-center gap-2"><i class="fa-brands fa-whatsapp"></i> (00) 00000-0000</li>
+                    <li class="flex items-center gap-2"><i class="fa-brands fa-instagram"></i> @psicologadeniseferreira</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 text-center md:text-left text-xs text-brand-textLight font-light border-t border-brand-secondaryLight pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 Denise Santos Ferreira. Todos os direitos reservados.</p>
+            <p>Psicologia Clínica | Psicoterapia Presencial e Online</p>
+        </div>
+    </footer>
+
+</body>
+</html>
