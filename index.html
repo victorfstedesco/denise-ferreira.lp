@@ -37,14 +37,17 @@
         @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
         .delay-100 { animation-delay: 100ms; }
         .delay-200 { animation-delay: 200ms; }
+        /* Esconde o texto do logo quando a imagem carregar */
+        a:has(img[src="logo.png"]:not([style*="display:none"])) .logo-text-fallback { display: none; }
     </style>
 </head>
 <body class="antialiased selection:bg-brand-primary selection:text-white">
 
     <header class="fixed w-full bg-white/95 backdrop-blur-md z-50 border-b border-brand-secondaryLight/50 transition-all shadow-sm">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="#" class="text-2xl font-serif font-semibold text-brand-primary tracking-wide">
-                Denise S. Ferreira
+            <a href="#" class="flex items-center gap-3">
+                <img src="logodenise.svg" alt="Denise S. Ferreira" class="h-12 w-auto object-contain" onerror="this.style.display='none'">
+                <span class="text-2xl font-serif font-semibold text-brand-primary tracking-wide logo-text-fallback">Denise S. Ferreira</span>
             </a>
             <nav class="hidden md:flex space-x-10 text-[13px] uppercase tracking-[0.15em] font-medium text-gray-500">
                 <a href="#inicio" class="hover:text-brand-secondary transition duration-300">Início</a>
@@ -53,46 +56,86 @@
                 <a href="#duvidas" class="hover:text-brand-secondary transition duration-300">Dúvidas</a>
                 <a href="#depoimentos" class="hover:text-brand-secondary transition duration-300">Depoimentos</a>
             </nav>
-            <a href="https://wa.me/SEUNUMERO" target="_blank" class="hidden md:inline-flex items-center justify-center bg-brand-primary text-white px-7 py-2.5 rounded-full text-sm font-medium tracking-wide hover:bg-brand-primaryHover transition duration-300 shadow-md">
+            <a href="https://wa.me/554499246036" target="_blank" class="hidden md:inline-flex items-center justify-center bg-brand-primary text-white px-7 py-2.5 rounded-full text-sm font-medium tracking-wide hover:bg-brand-primaryHover transition duration-300 shadow-md">
+                Vamos agendar?
+            </a>
+            <!-- Botão hamburguer (mobile) -->
+            <button id="menu-toggle" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded-lg hover:bg-brand-secondaryLight transition" aria-label="Abrir menu">
+                <span class="hamburger-line block w-6 h-0.5 bg-brand-primary transition-all duration-300"></span>
+                <span class="hamburger-line block w-6 h-0.5 bg-brand-primary transition-all duration-300"></span>
+                <span class="hamburger-line block w-6 h-0.5 bg-brand-primary transition-all duration-300"></span>
+            </button>
+        </div>
+
+        <!-- Menu mobile -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-brand-secondaryLight px-6 pb-6 pt-4">
+            <nav class="flex flex-col gap-4 text-[13px] uppercase tracking-[0.15em] font-medium text-gray-500 mb-6">
+                <a href="#inicio" class="hover:text-brand-secondary transition duration-300" onclick="closeMenu()">Início</a>
+                <a href="#sobre-mim" class="hover:text-brand-secondary transition duration-300" onclick="closeMenu()">Sobre Mim</a>
+                <a href="#demandas" class="hover:text-brand-secondary transition duration-300" onclick="closeMenu()">Áreas</a>
+                <a href="#duvidas" class="hover:text-brand-secondary transition duration-300" onclick="closeMenu()">Dúvidas</a>
+                <a href="#depoimentos" class="hover:text-brand-secondary transition duration-300" onclick="closeMenu()">Depoimentos</a>
+            </nav>
+            <a href="https://wa.me/554499246036" target="_blank" onclick="closeMenu()" class="inline-flex items-center justify-center w-full bg-brand-primary text-white px-7 py-3 rounded-full text-sm font-medium tracking-wide hover:bg-brand-primaryHover transition duration-300 shadow-md">
                 Vamos agendar?
             </a>
         </div>
     </header>
 
-    <section id="inicio" class="relative pt-40 pb-20 md:pt-52 md:pb-32 overflow-hidden bg-brand-bg">
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
-            
-            <div class="lg:col-span-6 space-y-8 z-10 fade-in-up">
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const lines = document.querySelectorAll('.hamburger-line');
+
+        toggle.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            // Anima o ícone: X quando aberto
+            lines[0].style.transform = isOpen ? '' : 'translateY(8px) rotate(45deg)';
+            lines[1].style.opacity  = isOpen ? '1' : '0';
+            lines[2].style.transform = isOpen ? '' : 'translateY(-8px) rotate(-45deg)';
+        });
+
+        function closeMenu() {
+            mobileMenu.classList.add('hidden');
+            lines[0].style.transform = '';
+            lines[1].style.opacity   = '1';
+            lines[2].style.transform = '';
+        }
+    </script>
+
+    <section id="inicio" class="relative min-h-screen flex items-end md:items-center overflow-hidden">
+        <!-- Foto de fundo -->
+        <div class="absolute inset-0">
+            <img src="foto2.jpeg"
+                 alt="Denise Santos Ferreira"
+                 class="w-full h-full object-cover object-top">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20 md:bg-gradient-to-r md:from-black/80 md:via-black/60 md:to-black/20"></div>
+        </div>
+
+        <!-- Conteúdo sobreposto -->
+        <div class="relative z-10 max-w-7xl mx-auto px-6 pb-24 pt-40 md:py-0 w-full">
+            <div class="max-w-xl space-y-7 fade-in-up">
                 <div class="flex flex-wrap gap-3">
-                    <span class="inline-block px-4 py-1.5 rounded-full border border-brand-secondary/30 bg-white text-xs font-semibold tracking-widest uppercase text-brand-secondary shadow-sm">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-xs font-semibold tracking-widest uppercase text-white shadow-sm drop-shadow-md">
                         Psicoterapia: Presencial e Online
                     </span>
-                    <span class="inline-block px-4 py-1.5 rounded-full bg-brand-secondaryLight text-xs font-semibold tracking-widest uppercase text-brand-primary shadow-sm">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-xs font-semibold tracking-widest uppercase text-white shadow-sm drop-shadow-md">
                         Público: Criança, adolescente e adulto
                     </span>
                 </div>
-                
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.1] text-brand-primary">
-                    Um espaço de <span class="italic text-brand-secondary">escuta segura</span>.
+
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.1] text-white drop-shadow-lg">
+                    Um espaço de <span class="italic text-brand-secondary [text-shadow:_0_2px_10px_rgb(0_0_0_/_0.8)]">escuta segura</span>.
                 </h1>
-                <p class="text-lg font-light leading-relaxed text-gray-600 max-w-lg">
+                <p class="text-lg font-light leading-relaxed text-white/90 max-w-lg drop-shadow-md">
                     Ofereço um espaço de escuta segura, acolhimento e experiência clínica para tratamento das dores emocionais, processos de mudanças, adaptações, crescimento e transformação.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <a href="https://wa.me/SEUNUMERO" class="bg-brand-primary text-white text-center px-8 py-4 rounded-full font-medium hover:bg-brand-primaryHover transition duration-300 shadow-xl shadow-brand-primary/20 flex items-center justify-center gap-2">
+                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <a href="https://wa.me/554499246036" class="bg-brand-primary text-white text-center px-8 py-4 rounded-full font-medium hover:bg-brand-primaryHover transition duration-300 shadow-xl flex items-center justify-center gap-2">
                         Vamos agendar?
                     </a>
                 </div>
-            </div>
-
-            <div class="lg:col-span-6 relative h-[500px] md:h-[600px] hidden md:block">
-                <div class="absolute top-0 right-0 w-3/4 h-[85%] rounded-[2rem] shadow-2xl z-10 fade-in-up delay-100 border-4 border-white overflow-hidden">
-                    <img src="foto2.jpeg" 
-                         alt="Sessão de Psicoterapia/Acolhimento" 
-                         class="w-full h-full object-cover object-top scale-105">
-                </div>
-                     
-                <div class="absolute top-20 left-10 w-64 h-64 bg-brand-secondaryLight rounded-full mix-blend-multiply opacity-70 blur-3xl z-0"></div>
             </div>
         </div>
     </section>
@@ -132,7 +175,6 @@
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <p class="uppercase tracking-[0.2em] text-xs text-brand-secondary font-bold mb-2">Especialidades</p>
                 <h2 class="text-4xl md:text-5xl font-serif text-brand-primary mb-6">Algumas demandas de atendimento</h2>
-                <p class="text-brand-text font-light text-lg">Quadros de excesso de Ansiedade e Agressividade.</p>
             </div>
 
             <div class="flex flex-wrap gap-3 justify-center">
@@ -176,13 +218,15 @@
                 <!-- Pergunta 1 -->
                 <details class="group bg-brand-bg rounded-2xl border border-brand-secondaryLight overflow-hidden">
                     <summary class="cursor-pointer px-6 py-5 font-medium text-brand-primary flex justify-between items-center outline-none list-none">
-                        Como funciona a terapia online?
+                        Como funciona a psicoterapia Presencial e online?
                         <span class="transition group-open:rotate-180 text-brand-secondary">
                             <i class="fa-solid fa-chevron-down"></i>
                         </span>
                     </summary>
-                    <div class="px-6 pb-5 text-brand-text font-light text-sm">
-                        As sessões online ocorrem por vídeo chamada de forma sigilosa e segura. A eficácia é a mesma do formato presencial, permitindo que você seja atendido no conforto de onde estiver.
+                    <div class="px-6 pb-5 text-brand-text font-light text-sm space-y-2">
+                        <p>As duas são realizadas em ambientes seguros, e no online o profissional irá orientar o paciente sobre o local mais adequado que ele possa se conectar e se sentir bem para falar livremente.</p>
+                        <p>Demandas mais graves orientam se fazer no presencial, o profissional poderá orientar melhor sobre isso na primeira sessão.</p>
+                        <p>Ambas as modalidades são eficazes.</p>
                     </div>
                 </details>
                 
@@ -202,13 +246,16 @@
                 <!-- Pergunta 3 -->
                 <details class="group bg-brand-bg rounded-2xl border border-brand-secondaryLight overflow-hidden">
                     <summary class="cursor-pointer px-6 py-5 font-medium text-brand-primary flex justify-between items-center outline-none list-none">
-                        Psicanálise é recomendada para crianças e adolescentes?
+                        A psicoterapia é indicada para todas as idades?
                         <span class="transition group-open:rotate-180 text-brand-secondary">
                             <i class="fa-solid fa-chevron-down"></i>
                         </span>
                     </summary>
-                    <div class="px-6 pb-5 text-brand-text font-light text-sm">
-                        Sim! Atendo ao público de crianças e adolescentes. A psicanálise infantil utiliza recursos lúdicos para permitir que os pequenos expressem de forma segura seus incômodos, mudanças e desafios.
+                    <div class="px-6 pb-5 text-brand-text font-light text-sm space-y-2">
+                        <p>A psicoterapia em bases da psicanálise é oferecida para todas as idades, e adequada à atuação do profissional conforme a necessidade do paciente; o manejo clínico é personalizado.</p>
+                        <p><strong>Público infantil:</strong> falar livremente, uso de recursos lúdicos e orientação aos pais.</p>
+                        <p><strong>Público adolescente:</strong> falar livremente, uso de recursos lúdicos se for necessário e orientação aos pais.</p>
+                        <p><strong>Público adulto:</strong> falar livremente; pode ser usado algum instrumento dinâmico se for necessário.</p>
                     </div>
                 </details>
             </div>
@@ -281,7 +328,7 @@
                 <div class="relative z-10 text-white">
                     <h2 class="text-4xl font-serif mb-6">Vamos agendar?</h2>
                     <p class="text-brand-secondaryLight mb-10 font-light max-w-lg mx-auto text-lg">Cuidar da sua saúde mental é um investimento em qualidade de vida. Inicie seu processo com empatia profunda.</p>
-                    <a href="https://wa.me/SEUNUMERO" class="inline-flex items-center gap-3 bg-white text-brand-primary px-10 py-4 rounded-full font-bold hover:scale-105 transition duration-300 shadow-xl">
+                    <a href="https://wa.me/554499246036" class="inline-flex items-center gap-3 bg-white text-brand-primary px-10 py-4 rounded-full font-bold hover:scale-105 transition duration-300 shadow-xl">
                         <i class="fa-brands fa-whatsapp text-2xl text-green-600"></i>
                         Agendar Sessão
                     </a>
@@ -309,7 +356,7 @@
             <div>
                 <h4 class="font-serif text-lg mb-6 text-brand-secondary">Contato</h4>
                 <ul class="space-y-3 text-sm font-light text-brand-text">
-                    <li class="flex items-center gap-2"><i class="fa-brands fa-whatsapp"></i> (00) 00000-0000</li>
+                    <li class="flex items-center gap-2"><i class="fa-brands fa-whatsapp"></i> (44) 9924-6036</li>
                     <li class="flex items-center gap-2"><i class="fa-brands fa-instagram"></i> @psicologadeniseferreira</li>
                 </ul>
             </div>
